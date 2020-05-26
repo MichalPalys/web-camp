@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Cabin", Arial, sans-serif;
+  font-size: 10px;
+  color: #231F20;
+}
+
+.app-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+}
+
+.section-banner-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(30vh, auto);
+  grid-gap: 10px;
+  margin: 0 5px;
+}
+
+.section-banner-wrapper .single-banner-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  border: 1px solid #504f4f;
+  background-color: #a7a5a4;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-banner-wrapper .single-banner-wrapper a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+}
+
+footer .discount-wrapper {
+  text-align: center;
+  padding-top: 20px;
+  background-color: #F5F5F5;
+}
+
+footer .discount-wrapper > div:first-of-type {
+  max-width: 339px;
+  margin: 0 auto;
+}
+
+footer .discount-wrapper .discount-wrapper__text-element-1 {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+footer .discount-wrapper .discount-wrapper__text-element-2 {
+  font-size: 20px;
+}
+
+footer .discount-wrapper .button-discount {
+  background-color: #231F20;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+footer .nav-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
+  background-color: #231F20;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+footer .menu-wrapper {
+  list-style-type: none;
+}
+
+footer .menu-wrapper > li {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+footer .menu-wrapper li {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 20px;
+}
+
+footer .menu-wrapper li ul > li {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+footer .menu-wrapper li ul > li > a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
+
+footer .menu-wrapper li ul {
+  list-style-type: none;
+  display: none;
+}
+
+footer .icons-wrapper {
+  text-align: center;
+}
+
+footer .icons-wrapper img {
+  padding: 20px;
+}
+
+footer .icons-wrapper .icons-wrapper__element1 .icons-wrapper__element1__visible {
+  display: none;
+}
+
+footer .icons-wrapper .icons-wrapper__element2 {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  .section-banner-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(40vh, auto);
+    grid-gap: 10px;
+    margin: 0 15px;
+  }
+  footer .discount-wrapper > div:first-of-type {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  footer .nav-container {
+    background-color: #231F20;
+    color: white;
+    text-align: center;
+  }
+  footer .nav-container .menu-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    color: white;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    text-align: center;
+  }
+  footer .nav-container .menu-wrapper li ul {
+    display: block !important;
+  }
+  footer .icons-wrapper__element1 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (2fr)[8];
+        grid-template-columns: repeat(8, 2fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .icons-wrapper__element1 .icons-wrapper__element1__visible {
+    display: block !important;
+    font-size: 13px;
+    font-style: normal;
+  }
+  footer .icons-wrapper__element2 {
+    display: block !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
