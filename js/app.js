@@ -29,7 +29,55 @@
     //     setClickPossibility(windowWidth);
     // });
 
-    $('.nav-title').click(function(){
-        $(this).closest('.menu-wrapper').find('ul').slideUp();
-        $(this).children('ul').slideToggle();
-    });
+    $(document).ready(function(){
+        $('.main-slider-container').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000
+        });
+
+        $('.company-slider-container').slick({
+            infinite: true,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev custom-slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next custom-slick-next">Next</button>',
+            responsive: [
+                {
+                  breakpoint: 960,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true
+                  }
+                }
+            ]
+        });
+
+        $('.insta-container__slider').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev insta-container__slider__custom-slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next insta-container__slider__custom-slick-next">Next</button>',
+            responsive: [
+                {
+                  breakpoint: 960,
+                  settings: {
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    prevArrow: '<button type="button" class="slick-prev custom-slick-prev">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next custom-slick-next">Next</button>',
+                  }
+                }
+            ]
+        });
+
+        $('.nav-title').click(function(){
+            $(this).closest('.menu-wrapper').find('ul').slideUp();
+            $(this).children('ul').slideToggle();
+        });
+      });
