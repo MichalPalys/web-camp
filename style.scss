@@ -401,7 +401,7 @@ footer {
 		&:nth-of-type(2), &:nth-of-type(3) {
 			display: none;
         }
-        
+
         img {
             height: 26px;
         }
@@ -424,12 +424,16 @@ footer {
 			width: auto;
 		}
 	}
+
 	nav {
 		display: none;
 		ul {
 			list-style: none;
+		}
+		.main-nav-box {
 			padding: 0;
-			a {
+
+			> li > a {
 				display: block;
 				font-weight: bold;
 				color: #000;
@@ -437,10 +441,44 @@ footer {
 				text-decoration: none;
 				padding: .75rem 1rem;
 				font-size: 1rem;
-				&:hover {
-					color: #BB2000;
-				}
+				// &:hover {
+				// 	color: #BB2000;
+				// }
 			}
+
+			.menu-dropdown {
+
+			}
+		}
+		a {
+			color: #000;
+			text-decoration: none;
+			text-transform: capitalize;
+		}
+	}
+}
+#menu-banner {
+	width: 100%;
+
+	a {
+		display: block;
+		padding-bottom: 56%;
+		position: relative;
+		margin-bottom: 1rem;
+		img {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%; height: 100%;
+			background-color: #eee;
+			object-fit: cover;
+			text-transform: uppercase;
+			font-size: 1.25rem;
+			letter-spacing: 3px;
+			text-align: center;
+			color: #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }
@@ -615,15 +653,81 @@ footer {
 			> img {
 				height: 64px;
 			}
-		}
+        }
+
 		nav {
-			display: block;
-			ul {
+			display: table;
+			margin: 0 auto;
+			> ul {
 				display: flex;
 				justify-content: center;
-				li + li {
-					margin-left: 1rem;
+				position: relative;
+
+				> li {
+					+ li {
+						margin-left: 2rem;
+					}
+					.menu-dropdown {
+						position: absolute;
+						background-color: #fff;
+						top: 100%; left: 0;
+						width: 100%;
+						box-shadow: 30vw 0 0 0 #fff, -30vw 0 0 0 #fff;
+						display: none;
+						padding: 1rem;
+
+						> ul {
+							width: 100%;
+						}
+					}
+					&:hover {
+						.menu-dropdown {
+							display: flex;
+						}
+						> a {
+							background-color: #000;
+							color: #fff;
+						}
+					}
 				}
+
+			}
+		}
+	}
+	#left-submenu > li {
+		width: 100%;
+		max-width: 33.332%;
+		float: left;
+		&:last-child {
+			margin-top: -22px;
+		}
+		> a {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		a {
+			display: block;
+			padding: 5px;
+		}
+	}
+	#right-submenu {
+		text-align: center;
+		li {
+			display: inline-block;
+
+			a {
+				text-transform: uppercase;
+				display: block;
+			}
+		}
+		li:not(#menu-banner) {
+			+ li {
+				margin-left: 4rem;
+			}
+			a {
+				font-size: 14px;
+				padding: 4px;
+				margin: 5px 0;
 			}
 		}
 	}
@@ -649,7 +753,7 @@ footer {
             height: 47px;
 			span + span {
                 margin-left: 2.5rem;
-                
+
                 img {
                     margin-right: 10px;
                 }
