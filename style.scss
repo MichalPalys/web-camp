@@ -348,7 +348,12 @@ footer {
             font-size: 15px;
             font-weight: bold;
             letter-spacing: 3px;
-            line-height: 20px;
+			line-height: 20px;
+
+			> a {
+				color: #fff;
+				text-decoration: none;
+			}
 
             ul > li {
                 margin-top: 10px;
@@ -418,6 +423,7 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		padding: 1rem;
+		transition: transform .3s ease-out;
 
 		> img {
 			height: 32px;
@@ -426,34 +432,131 @@ footer {
 	}
 
 	nav {
-		display: none;
+		// display: none;
+		position: absolute;
+		width: calc(100% - 80px);
+		background: #fff;
+		top: 0;
+		height: 100vh;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		transition: transform .3s ease-out;
+		left: 100%;
+
 		ul {
 			list-style: none;
 		}
 		.main-nav-box {
 			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
 
-			> li > a {
-				display: block;
-				font-weight: bold;
-				color: #000;
-				text-transform: uppercase;
-				text-decoration: none;
-				padding: .75rem 1rem;
-				font-size: 1rem;
-				// &:hover {
-				// 	color: #BB2000;
-				// }
+			> li {
+				width: 100%;
+				&.order-first {
+					order: -1;
+				}
+			}
+			li + li, li ul {
+				border-top: 1px solid #ddd;
 			}
 
-			.menu-dropdown {
-
+			.menu-dropdown, .menu-dropdown li ul {
+				position: absolute;
+				display: none;
+				top: 43px; left: 0;
+				width: 100%; height: calc(100% - 43px);
+				overflow-y: auto;
+				background-color: #fff;
+				z-index: 1;
+				&.top {
+					top: 0; height: 100%;
+				}
 			}
 		}
-		a {
+		li:not(#menu-banner) > a {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 			color: #000;
 			text-decoration: none;
 			text-transform: capitalize;
+			padding: 1rem;
+			font-size: 13px;
+
+			&.open {
+				font-weight: bold;
+				justify-content: center;
+				position: relative;
+				span {
+					position: absolute;
+					transform: rotate(90deg);
+					left: 1rem;
+				}
+				+ .menu-dropdown, + ul {
+					display: block;
+				}
+			}
+		}
+		li.only-mobile a {
+			justify-content: flex-start !important;
+			background-color: #cbcbcb;
+			img {
+				margin-right: 1rem;
+            }
+            > i {
+                font: 20px "Cabin";
+
+                &::before {
+                    text-align: start;
+                    margin-left: 0;
+                    margin-right: 0.7em;
+                }
+            }
+			.menu-arrow {
+				margin-left: auto !important;
+			}
+			span:not(.menu-arrow) {
+				display: inline-block;
+				padding: 0 10px;
+				&:first-of-type {
+					padding-left: 0;
+				}
+				+ span {
+					border-left: 1px solid #ddd;
+				}
+			}
+		}
+		.menu-arrow {
+			background-image: url('img/arrow_dropdown.svg');
+			background-size: 10px auto;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 10px; height: 10px;
+			display: block;
+			transform: rotate(-90deg);
+		}
+	}
+	&.open {
+		nav {
+			transform: translateX(-100%);
+			box-shadow: -1px 0 10px 0 rgba(0,0,0,0.25);
+		}
+		> div {
+			transform: translateX(calc(-100% + 80px));
+		}
+	}
+}
+#left-submenu {
+	display: flex;
+	flex-wrap: wrap;
+
+	> li {
+		width: 100%;
+
+		&.order-first {
+			order: -1;
 		}
 	}
 }
@@ -464,7 +567,7 @@ footer {
 		display: block;
 		padding-bottom: 56%;
 		position: relative;
-		margin-bottom: 1rem;
+		margin-bottom: 0;
 		img {
 			position: absolute;
 			top: 0; left: 0;
@@ -614,7 +717,7 @@ footer {
 }
 
 @media (min-width: 980px) {
-	#burger, #top-links > a.link-icon:nth-of-type(1) {
+	#burger, #top-links > a.link-icon:nth-of-type(1), .only-mobile {
 		display: none;
 	}
 	#search-box {
@@ -650,6 +753,8 @@ footer {
 			padding: .5rem 1rem;
 			justify-content: space-around;
 			align-items: center;
+			transform: none !important;
+
 			> img {
 				height: 64px;
 			}
@@ -658,26 +763,47 @@ footer {
 		nav {
 			display: table;
 			margin: 0 auto;
+			position: static;
+			height: auto; width: auto;
+			transform: none !important;
+			box-shadow: none;
+
 			> ul {
 				display: flex;
 				justify-content: center;
 				position: relative;
 
 				> li {
+					width: auto !important;
 					+ li {
 						margin-left: 2rem;
+					}
+					> a {
+						display: block;
+						font-weight: bold;
+						color: #000;
+						text-transform: uppercase;
+						text-decoration: none;
+						padding: .75rem 1rem !important;
+						font-size: 1rem !important;
 					}
 					.menu-dropdown {
 						position: absolute;
 						background-color: #fff;
-						top: 100%; left: 0;
+						top: 100% !important;
+						left: 0;
 						width: 100%;
+						height: auto !important;
 						box-shadow: 30vw 0 0 0 #fff, -30vw 0 0 0 #fff;
 						display: none;
 						padding: 1rem;
 
 						> ul {
 							width: 100%;
+						}
+						li ul {
+							position: static !important;
+							display: block !important;
 						}
 					}
 					&:hover {
@@ -686,29 +812,39 @@ footer {
 						}
 						> a {
 							background-color: #000;
-							color: #fff;
+							color: #fff !important;
 						}
 					}
 				}
 
 			}
+			li, ul {
+				border: none !important;
+			}
+			.menu-arrow {
+				display: none;
+			}
 		}
 	}
-	#left-submenu > li {
-		width: 100%;
-		max-width: 33.332%;
-		float: left;
-		&:last-child {
-			margin-top: -22px;
-		}
-		> a {
-			font-weight: bold;
-			text-transform: uppercase;
-		}
-		a {
-			display: block;
-			padding: 5px;
-		}
+	#left-submenu {
+		display: block !important;
+		 > li {
+			width: 100%;
+			max-width: 33.332%;
+			float: left;
+			&:last-child {
+				margin-top: -22px;
+			}
+			> a {
+				font-weight: bold;
+				text-transform: uppercase !important;
+			}
+			a {
+				display: block;
+				padding: 5px !important;
+				font-size: 10px !important;
+			}
+		 }
 	}
 	#right-submenu {
 		text-align: center;
@@ -716,8 +852,8 @@ footer {
 			display: inline-block;
 
 			a {
-				text-transform: uppercase;
-				display: block;
+				text-transform: uppercase !important;
+				display: block !important;
 			}
 		}
 		li:not(#menu-banner) {
@@ -725,11 +861,14 @@ footer {
 				margin-left: 4rem;
 			}
 			a {
-				font-size: 14px;
-				padding: 4px;
+				font-size: 14px !important;
+				padding: 4px !important;
 				margin: 5px 0;
 			}
 		}
+	}
+	#menu-banner {
+		margin-bottom: 1rem;
 	}
 	#langs {
 		display: block;
@@ -884,7 +1023,10 @@ footer {
 
                 li ul {
                     display: block!important;
-                }
+				}
+				> li > a {
+					pointer-events: none;
+				}
             }
         }
 
