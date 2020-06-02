@@ -46,16 +46,55 @@
 
 		$('#langs button').on('click', function(){
 			$(this).next().slideToggle();
-		});
+    });
+    
+    $('.single-product-container__slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      arrows: false,
+      asNavFor: '.single-product-container__nav-slider',
 
-        $('.main-slider-container').slick({
-            infinite: true,
+      
+      // prevArrow: '<button type="button" class="slick-prev custom-slick-prev">Previous</button>',
+      // nextArrow: '<button type="button" class="slick-next custom-slick-next">Next</button>',
+      responsive: [
+          {
+            breakpoint: 960,
+            settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,
-			autoplaySpeed: 2000,
-			arrows: false,
-        });
+            infinite: true,
+            // mobileFirst: true,
+            arrows: false,
+            }
+          }
+      ]
+    });
+
+    $('.single-product-container__nav-slider').slick({
+      vertical: true,
+      verticalSwiping: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.single-product-container__slider',
+      centerMode: true,
+      centerPadding: '60px',
+      focusOnSelect: true,
+      responsive: [{
+        breakpoint: 960,
+        settings: "unslick"
+      }]
+    });
+
+    $('.main-slider-container').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        arrows: false,
+    });
 
         $('.company-slider-container').slick({
           slidesToShow: 2,
