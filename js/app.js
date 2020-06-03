@@ -31,6 +31,33 @@
 
     $(document).ready(function(){
 
+      $('.action-wrapper button').on('click', function(){
+
+        var bootSize = $('select.select-active').children("option:selected").val();
+
+        if(bootSize != 0) {
+          var $loadingModal = $('#loading-modal');
+          $loadingModal.css("display", "block");
+          setTimeout(function(){
+            $loadingModal.css("display", "none");
+            console.log(bootSize);
+          }, 3000);
+          
+        } else {
+          var $validationModal = $('#validation-modal');
+
+          $validationModal.css("display", "block")
+          // console.log($validationModal.css("display", "block"));
+        }
+      });
+
+      $('.info-modal-close').on('click', function(){
+        var $modalToClose = $(this).parent();
+
+        $modalToClose.css("display", "none");
+        // console.log($modalToClose);
+      });
+
 		$('a.mobile-next').on('click', function(e){
 
 			if (getWidth() < 980) {
