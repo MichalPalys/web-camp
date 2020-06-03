@@ -10,6 +10,46 @@ body {
     color: #231F20;
 }
 
+//progress bar
+.prog {
+    background: #E6E6E6;
+    height: 4px;
+    border-radius: 10px;
+
+    .progBar {
+        border-radius: 10px;
+        background: #231F20;
+        height: 4px;
+    }
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+    }
+
+//button
+.btn-large {
+    display: block;
+    height: 57px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #231F20;
+    border: 1px solid #D2D2D2;
+    color: #fff;
+    line-height: 57px;
+    padding: 0px 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .loader {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -107,6 +147,7 @@ body {
 }
 
 .breadcrumbs {
+    display: none;
     font-size: 11px;
     line-height: 15px;
     margin-top: 10px;
@@ -413,7 +454,7 @@ body {
                     position: absolute;
                     width: 20%;
                     height: 100%;
-                    background-color: red;
+                    background-color: #BB2000;
                     transform: translateY(150%);
                     border-radius: 50%;
                     left: calc((var(--n) - 1) * 20%);
@@ -708,6 +749,39 @@ body {
         font-size: 15px;
         margin: 0 15px;
         line-height: 25px;
+    }
+}
+
+//'OPINIE NASZYCH KLIENTÓW' section
+.clients-opinion-container {
+    &__header-text {
+        padding: 15px 0;
+        max-width: 345px;
+        margin: 0 auto;
+
+        span {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+    }
+
+    &__main-content {
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+
+        .statics-wrapper {
+            width: 100%;
+        }
+
+        .comments-wrapper {
+            width: 100%;
+        }
+
+        .all-opinions-link {
+
+        }
     }
 }
 
@@ -1137,6 +1211,10 @@ footer {
 }
 
 @media (min-width: 980px) {
+    .breadcrumbs {
+        display: block;
+    }
+
     #toggle-mobile {
         display: inline;
     }
@@ -1490,6 +1568,22 @@ footer {
             width: 80%;
             margin: 0 auto;
             line-height: 25px;
+        }
+    }
+
+    .clients-opinion-container {
+        &__main-content {
+            flex-direction: row;
+
+            > div:first-of-type {
+                width: 100%;
+                max-width: 30%;
+            }
+
+            > div:last-of-type {
+                width: 100%;
+                max-width: 70%;
+            }
         }
     }
 
