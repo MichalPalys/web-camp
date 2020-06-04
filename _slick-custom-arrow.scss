@@ -1,0 +1,79 @@
+// vertical big custom slick arrow
+.vertical-big-arrow-slick-prev {
+    top: -30px;
+
+    &::before {
+        content: '\f005';
+    }
+}
+
+.vertical-big-arrow-slick-next {
+    top: calc(100% + 30px);
+
+    &::before {
+        content: '\f004';
+    }
+}
+
+.vertical-big-arrow-slick-prev, .vertical-big-arrow-slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    margin: auto;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &::before {
+        font-family: 'fontello';
+        font-size: 26px;
+        line-height: 1;
+    }
+}
+
+// horizontal big custom slick arrow
+.horizontal-big-arrow-slick-prev {
+    left: 10%;
+
+    &::before {
+        content: '\f007';
+    }
+}
+
+.horizontal-big-arrow-slick-next {
+    right: 10%;
+
+    &::before {
+        content: '\f006';
+    }
+}
+
+.horizontal-big-arrow-slick-prev, .horizontal-big-arrow-slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    // transform: translate(0, -50%);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &::before {
+        font-family: 'fontello';
+        font-size: 26px;
+        line-height: 1;
+    }
+}

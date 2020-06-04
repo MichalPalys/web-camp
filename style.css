@@ -1,3 +1,91 @@
+.vertical-big-arrow-slick-prev {
+  top: -30px;
+}
+
+.vertical-big-arrow-slick-prev::before {
+  content: '\f005';
+}
+
+.vertical-big-arrow-slick-next {
+  top: calc(100% + 30px);
+}
+
+.vertical-big-arrow-slick-next::before {
+  content: '\f004';
+}
+
+.vertical-big-arrow-slick-prev, .vertical-big-arrow-slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: block;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin: auto;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.vertical-big-arrow-slick-prev::before, .vertical-big-arrow-slick-next::before {
+  font-family: 'fontello';
+  font-size: 26px;
+  line-height: 1;
+}
+
+.horizontal-big-arrow-slick-prev {
+  left: 10%;
+}
+
+.horizontal-big-arrow-slick-prev::before {
+  content: '\f007';
+}
+
+.horizontal-big-arrow-slick-next {
+  right: 10%;
+}
+
+.horizontal-big-arrow-slick-next::before {
+  content: '\f006';
+}
+
+.horizontal-big-arrow-slick-prev, .horizontal-big-arrow-slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.horizontal-big-arrow-slick-prev::before, .horizontal-big-arrow-slick-next::before {
+  font-family: 'fontello';
+  font-size: 26px;
+  line-height: 1;
+}
+
+.section-header-text {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  width: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,17 +109,6 @@ body {
   border-radius: 10px;
   background: #231F20;
   height: 4px;
-}
-
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 .btn-large {
@@ -329,6 +406,76 @@ body {
 .text-danger {
   color: #dc3545 !important;
   font-weight: bold !important;
+}
+
+.product-description-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 10px;
+}
+
+.product-description-container > div:first-of-type > div:first-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product-description-container > div:first-of-type > div:first-of-type > div:last-of-type > a {
+  color: #BB2000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.product-description-container > div:first-of-type > div:first-of-type > div:last-of-type > a > i {
+  font-size: 8px;
+  vertical-align: middle;
+}
+
+.product-description-container > div:first-of-type > div:last-of-type {
+  font-size: 13px;
+  line-height: 25px;
+  margin: 10px 0;
+}
+
+.product-description-container > div:last-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.product-description-container > div:last-of-type > div:first-of-type img {
+  width: 100%;
+}
+
+.product-description-container > div:last-of-type .accessories-slider img {
+  margin-bottom: 15px;
+  min-width: 170px;
+  min-height: 170px;
+}
+
+.specification-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 35px;
+  text-transform: capitalize;
 }
 
 .single-product-container {
@@ -1013,7 +1160,9 @@ footer .icons-wrapper .icons-wrapper__element2 {
 
 #menu-box > div > img {
   height: 32px;
-  width: auto;
+  min-width: 10%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 #menu-box nav {
@@ -1605,7 +1754,7 @@ footer .icons-wrapper .icons-wrapper__element2 {
     margin: 0 30px;
   }
   .single-product-container > div:first-of-type {
-    max-width: 60%;
+    max-width: 69%;
     width: 100%;
   }
   .single-product-container > div:first-of-type .single-product-container__slider {
@@ -1645,17 +1794,23 @@ footer .icons-wrapper .icons-wrapper__element2 {
     font-size: 14px;
     margin-left: 0;
   }
-  .single-product-container > div:first-of-type .single-product-container__slider img {
+  .single-product-container > div:first-of-type .single-product-container__slider a {
     width: 70%;
     margin: 0 auto;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    overflow: hidden;
   }
-  .single-product-container > div:first-of-type .single-product-container__slider img:hover {
-    width: 77%;
+  .single-product-container > div:first-of-type .single-product-container__slider a img {
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
+  }
+  .single-product-container > div:first-of-type .single-product-container__slider a img:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   .single-product-container > div:nth-of-type(2) {
-    max-width: 15%;
+    max-width: 6%;
     width: 100%;
     margin: auto 0;
     -webkit-box-ordinal-group: 0;
@@ -1668,6 +1823,37 @@ footer .icons-wrapper .icons-wrapper__element2 {
   .single-product-container > div:last-of-type {
     max-width: 25%;
     width: 100%;
+  }
+  .product-description-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 50px 30px 150px 30px;
+  }
+  .product-description-container > div:first-of-type {
+    width: 100%;
+    max-width: 40%;
+  }
+  .product-description-container > div:last-of-type {
+    width: 100%;
+    max-width: 60%;
+  }
+  .product-description-container > div:last-of-type > div:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-bottom: 120px;
+  }
+  .product-description-container > div:last-of-type > div:first-of-type > div {
+    width: 50%;
   }
   .main-slider-container img {
     max-height: 545px;

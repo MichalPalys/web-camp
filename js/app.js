@@ -79,12 +79,10 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
-      arrows: false,
+      arrows: true,
       asNavFor: '.single-product-container__nav-slider',
-
-      
-      // prevArrow: '<button type="button" class="slick-prev custom-slick-prev">Previous</button>',
-      // nextArrow: '<button type="button" class="slick-next custom-slick-next">Next</button>',
+      prevArrow: '<button type="button" class="horizontal-big-arrow-slick-prev">Previous</button>',
+      nextArrow: '<button type="button" class="horizontal-big-arrow-slick-next">Next</button>',
       responsive: [
           {
             breakpoint: 960,
@@ -102,12 +100,12 @@
     $('.single-product-container__nav-slider').slick({
       vertical: true,
       verticalSwiping: true,
-      slidesToShow: 3,
+      slidesToShow: 6,
       slidesToScroll: 1,
       asNavFor: '.single-product-container__slider',
-      centerMode: true,
-      centerPadding: '60px',
       focusOnSelect: true,
+      prevArrow: '<button type="button" class="vertical-big-arrow-slick-prev black">Previous</button>',
+      nextArrow: '<button type="button" class="vertical-big-arrow-slick-next">Next</button>',
       responsive: [{
         breakpoint: 960,
         settings: "unslick"
@@ -139,6 +137,29 @@
                   infinite: true
                 }
               }
+          ]
+        });
+
+        $('.accessories-slider').slick({
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          mobileFirst: true,
+          arrows: false,
+          variableWidth: true,
+          responsive: [
+            {
+              breakpoint: 960,
+                  settings: {
+                    infinite: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: true,
+                    variableWidth: false,
+                    prevArrow: '<button type="button" class="horizontal-big-arrow-slick-prev">Previous</button>',
+                    nextArrow: '<button type="button" class="horizontal-big-arrow-slick-next">Next</button>',
+                  }
+            }
           ]
         });
 
