@@ -329,6 +329,7 @@ body {
     flex-direction: column;
     margin: 0 10px;
 
+    // left side wrapper
     > div:first-of-type {
 
         > div:first-of-type {
@@ -353,20 +354,31 @@ body {
         }
     }
 
+    // right side wrapper
     > div:last-of-type {
         display: flex;
         flex-direction: column;
         text-align: center;
 
+        // shoe pictures
         > div:first-of-type img {
             width: 100%;
         }
 
+        // slider
         .accessories-slider {
+            .slick-slide {
+                display: flex;
+                flex-direction: column;
+
+                .slider-shoe-name {
+                    max-width: 200px;
+                }
+            }
             img {
                 margin-bottom: 15px;
-                min-width: 170px;
-                min-height: 170px;
+                width: 170px;
+                height: 170px;
             }
         }
     }
@@ -1556,15 +1568,18 @@ footer {
         flex-direction: row;
         margin: 50px 30px 150px 30px;
 
+        // left side wrapper
         > div:first-of-type {
             width: 100%;
             max-width: 40%;
         }
 
+        // right side wrapper
         > div:last-of-type {
             width: 100%;
             max-width: 60%;
 
+            // shoe pictures
             > div:first-of-type {
                 display: flex;
                 flex-direction: row;
@@ -1574,6 +1589,51 @@ footer {
                     width: 50%;
                 }
 
+            }
+
+            // slider
+            .accessories-slider {
+                display: flex;
+                align-items: center;
+
+                .horizontal-big-arrow-slick-prev {
+                    left: 0;
+                    top: auto;
+                }
+
+                .horizontal-big-arrow-slick-next {
+                    right: 0;
+                    top: auto;
+                }
+
+                .draggable {
+                    width: 90%;
+                    margin: 0 auto;
+                }
+
+                .slick-slide {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+    
+                    .slider-shoe-name {
+                        max-width: 200px;
+                        font-size: 10px;
+                        text-align: left;
+                    }
+
+                    .slider-shoe-price {
+                        text-align: left;
+                    }
+                }
+
+                img {
+                    margin: 0 auto 15px auto;
+                    width: 70px;
+                    height: 70px;
+                    // object-fit: scale-down;
+                }
             }
         }
     }

@@ -457,10 +457,24 @@ body {
   width: 100%;
 }
 
+.product-description-container > div:last-of-type .accessories-slider .slick-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product-description-container > div:last-of-type .accessories-slider .slick-slide .slider-shoe-name {
+  max-width: 200px;
+}
+
 .product-description-container > div:last-of-type .accessories-slider img {
   margin-bottom: 15px;
-  min-width: 170px;
-  min-height: 170px;
+  width: 170px;
+  height: 170px;
 }
 
 .specification-wrapper {
@@ -1854,6 +1868,54 @@ footer .icons-wrapper .icons-wrapper__element2 {
   }
   .product-description-container > div:last-of-type > div:first-of-type > div {
     width: 50%;
+  }
+  .product-description-container > div:last-of-type .accessories-slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .product-description-container > div:last-of-type .accessories-slider .horizontal-big-arrow-slick-prev {
+    left: 0;
+    top: auto;
+  }
+  .product-description-container > div:last-of-type .accessories-slider .horizontal-big-arrow-slick-next {
+    right: 0;
+    top: auto;
+  }
+  .product-description-container > div:last-of-type .accessories-slider .draggable {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .product-description-container > div:last-of-type .accessories-slider .slick-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .product-description-container > div:last-of-type .accessories-slider .slick-slide .slider-shoe-name {
+    max-width: 200px;
+    font-size: 10px;
+    text-align: left;
+  }
+  .product-description-container > div:last-of-type .accessories-slider .slick-slide .slider-shoe-price {
+    text-align: left;
+  }
+  .product-description-container > div:last-of-type .accessories-slider img {
+    margin: 0 auto 15px auto;
+    width: 70px;
+    height: 70px;
   }
   .main-slider-container img {
     max-height: 545px;
