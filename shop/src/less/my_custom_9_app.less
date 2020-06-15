@@ -967,6 +967,22 @@ header {
 	}
 }
 
+.f-group {
+	&.--checkbox {
+		.f-control {
+			display: none;
+
+			&:checked + .f-label {
+				&:before {
+					background: @less_iaicolorscheme_background_active_color;
+					border: 1px solid @less_iaicolorscheme_background_active_color;
+					color: @less_iaicolorscheme_button_text_color;
+				}
+			}
+		}
+	}
+}
+
 .article {
 	@media (min-width: 979px) {
 		margin-top: 38px;
