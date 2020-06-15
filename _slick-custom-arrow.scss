@@ -70,6 +70,7 @@
     border: none;
     outline: none;
     background: transparent;
+    z-index: 3;
 
     &::before {
         font-family: 'fontello';

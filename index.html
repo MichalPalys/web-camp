@@ -28,7 +28,7 @@
 		</div>
 		<div id="menu-box">
 			<div>
-				<img src="img/Armodo_pl_LOGO.png" alt="">
+				<a href=""><img src="img/Armodo_pl_LOGO.png" alt=""></a>
 				<form id="search-box" method="post" action="">
 					<input type="text" name="search" value="" placeholder="Wpisz czego szukasz">
 					<button type="submit"><img src="img/search-icon.svg" alt=""></button>
@@ -70,7 +70,7 @@
 
 							<ul id="left-submenu">
 								<li>
-									<a class="mobile-next" href="javascript:void(0)" title="">botko i kozaki<span class="menu-arrow"></span></a>
+									<a class="mobile-next" href="javascript:void(0)" title="">botki i kozaki<span class="menu-arrow"></span></a>
 									<ul>
 										<li><a href="botki_card.html" title="">botki</a></li>
 										<li><a href="" title="">glany</a></li>
@@ -144,7 +144,7 @@
 						<div class="menu-dropdown">
 							<ul id="left-submenu">
 								<li>
-									<a class="mobile-next" href="javascript:void(0)" title="">botko i kozaki<span class="menu-arrow"></span></a>
+									<a class="mobile-next" href="javascript:void(0)" title="">botki i kozaki<span class="menu-arrow"></span></a>
 									<ul>
 										<li><a href="" title="">botki</a></li>
 										<li><a href="" title="">glany</a></li>
@@ -335,53 +335,222 @@
                 <span>wybrane dla ciebie</span>
             </div>
             <div class="products-container__slider">
-                <div>
+                <div data-product-id="1">
                     <a href="" title="">
                         <img src="img/shoe-img-1.png" alt="">
                     </a>
                     <div class="slider-shoe-name">Botki KARINO</div>
                     <div class="slider-shoe-code">3019/076-f czarny </div>
                     <div class="slider-shoe-price">289,00 zł</div>
+                    <div class="pos-rel-container">
+                        <div class="btn-product-popup">dodaj do koszyka</div>
+                    </div>
                 </div>
-                <div>
+                <div data-product-id="2">
                     <a href="" title="">
                         <img src="img/shoe-img-2.png" alt="">
                     </a>
                     <div class="slider-shoe-name">Botki KARINO</div>
                     <div class="slider-shoe-code">3019/076-f czarny </div>
                     <div class="slider-shoe-price">289,00 zł</div>
+                    <div class="pos-rel-container">
+                        <div class="btn-product-popup">dodaj do koszyka</div>
+                    </div>
                 </div>
-                <div>
+                <div data-product-id="3">
                     <a href="" title="">
                         <img src="img/shoe-img-6.png" alt="">
                     </a>
                     <div class="slider-shoe-name">Botki KARINO</div>
                     <div class="slider-shoe-code">3019/076-f czarny </div>
                     <div class="slider-shoe-price text-danger">289,00 zł<span class="slider-shoe-price-discout">289,00 zł</span></div>
+                    <div class="pos-rel-container">
+                        <div class="btn-product-popup">dodaj do koszyka</div>
+                    </div>
                 </div>
-                <div>
+                <div data-product-id="4">
                     <a href="" title="">
                         <img src="img/shoe-img-3.png" alt="">
                     </a>
                     <div class="slider-shoe-name">Botki KARINO</div>
                     <div class="slider-shoe-code">3019/076-f czarny </div>
                     <div class="slider-shoe-price">289,00 zł</div>
+                    <div class="pos-rel-container">
+                        <div class="btn-product-popup">dodaj do koszyka</div>
+                    </div>
                 </div>
-                <div>
+                <div data-product-id="5">
                     <a href="" title="">
                         <img src="img/shoe-img-4.png" alt="">
                     </a>
                     <div class="slider-shoe-name">Botki KARINO</div>
                     <div class="slider-shoe-code">3019/076-f czarny </div>
                     <div class="slider-shoe-price">289,00 zł</div>
+                    <div class="pos-rel-container">
+                        <div class="btn-product-popup">dodaj do koszyka</div>
+                    </div>
                 </div>
-                <div>
+                <div data-product-id="6">
                     <a href="" title="">
                         <img src="img/shoe-img-5.png" alt="">
                     </a>
                     <div class="slider-shoe-name">Botki KARINO</div>
                     <div class="slider-shoe-code">3019/076-f czarny </div>
                     <div class="slider-shoe-price">289,00 zł</div>
+                    <div class="pos-rel-container">
+                        <div class="btn-product-popup">dodaj do koszyka</div>
+                    </div>
+                </div>
+            </div>
+            <div id="product-popup-modal" class="product-add-cart-modal">
+                <span class="product-add-cart-modal-close">&times;</span>
+                <div class="product-add-cart-modal-content">
+                    <div class="single-product-container">
+                        <div>
+                            <div class="single-product-container__slider_popup">
+                                <div>
+                                    <a href="" title="">
+                                        <img src="img/shoe/botki-karino-1-340x340.png" alt="">
+                                    </a>
+                                    <div>
+                                        <div>
+                                            <div class="slider-badge">
+                                                promocja
+                                            </div>
+                                            <div class="slider-rating-wrapper">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star" style="color: #CFCFCF;"></i>
+                                                <span>4.5</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="slider-shoe-name">Botki KARINO</div>
+                                            <span class="slider-shoe-code">3019/076-f czarny </span><span id="toggle-mobile" class="slider-shoe-code-desc"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="" title="">
+                                        <img src="img/shoe/botki-karino-2-340x340.png" alt="">
+                                    </a>
+                                    <div>
+                                        <div>
+                                            <div class="slider-badge">
+                                                promocja
+                                            </div>
+                                            <div class="slider-rating-wrapper">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star" style="color: #CFCFCF;"></i>
+                                                <span>4.5</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="slider-shoe-name">Botki KARINO</div>
+                                            <span class="slider-shoe-code">3019/076-f czarny</spa><span id="toggle-mobile" class="slider-shoe-code-desc"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="" title="">
+                                        <img src="img/shoe/botki-karino-3-340x340.png" alt="">
+                                    </a>
+                                    <div>
+                                        <div>
+                                            <div class="slider-badge">
+                                                promocja
+                                            </div>
+                                            <div class="slider-rating-wrapper">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star" style="color: #CFCFCF;"></i>
+                                                <span>4.5</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="slider-shoe-name">Botki KARINO</div>
+                                            <span class="slider-shoe-code">3019/076-f czarny</span><span id="toggle-mobile" class="slider-shoe-code-desc"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="single-product-container__product-purchase-details">
+                                <div class="price-wrapper">
+                                    <div class="current-price">
+                                        289,00 zł
+                                    </div>
+                                    <div class="discount-info-wrapper">
+                                        <div class="price-before-discount">
+                                            321,00 zł
+                                        </div>
+                                        <div class="discount-text">
+                                            Oszczędzasz <span class="discount-percent"></span> (<span class="discount-amount"></span>)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="send-info-wrapper">
+                                    <i class="icon-clock-outline"></i><span>Zamów dziś, wyślemy w czwartek 12.02</span>
+                                </div>
+                                <div class="shoe-size-wrapper">
+                                    <select class="select-active normal" name="" id="" style="font-family: 'fontello'">
+                                        <option value="0">wybierz rozmiar</option>
+                                        <option value="39">&#xe808 Rozmiar: 39 | dostępne</option>
+                                        <option value="40">&#xe808 Rozmiar: 40 | dostępne</option>
+                                        <option value="41">&#xe808 Rozmiar: 41 | dostępne</option>
+                                        <option value="42">&#xe808 Rozmiar: 42 | dostępne</option>
+                                    </select>
+                                </div>
+                                <div class="size-chart-wrapper">
+                                    <i class="icon-width"><a href="" title="">Tabela rozmiarów</a></i>
+                                </div>
+                                <div class="action-wrapper">
+                                    <button>dodaj do koszyka
+                                        <span></span><span></span><span></span><span></span><span></span>
+                                    </button>
+                                    <i class="icon-heart-empty"></i>
+                                    <div id="validation-modal" class="info-modal">
+                                        <span class="info-modal-close">&times;</span>
+                                        <!-- <img class="info-modal-content" id="img01"> -->
+                                        <div class="info-modal-caption">proszę wybierz rozmiar jaki chciałbyś kupić</div>
+                                    </div>
+                                    <div id="loading-modal" class="info-modal">
+                                        <span class="info-modal-close">&times;</span>
+                                        <div class="info-modal-content">
+                                            <div class="loader"></div>
+                                        </div>
+                                        <!-- <div class="info-modal-caption">proszę wybierz rozmiar jaki chciałbyś kupić</div> -->
+                                    </div>
+                                </div>
+                                <i class="icon-truck-outline"><span>Darmowa dostawa</span></i>
+                                <i class="icon-return-outline"><span>30 dni na zwrot</span></i>
+                                <i class="icon-phone-outline"><span>Zamów telefonicznie<b>|</b>+48 786818322</span></i>
+                            </div>
+                            <div class="single-product-container__available-colors-wrapper">
+                                <div class="single-product-container__available-colors-wrapper--header-text">
+                                    dostępne kolory
+                                </div>
+                                <div class="single-product-container__available-colors-wrapper--main-content">
+                                    <div>
+                                        <img src="img/shoe/botki-karino-1-340x340.png" alt="">
+                                        <span>czarny</span>
+                                    </div>
+                                    <div>
+                                        <img src="img/shoe/botki-karino-1-340x340.png" alt="">
+                                        <span>brązowy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

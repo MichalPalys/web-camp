@@ -1008,7 +1008,7 @@ footer {
 		padding: 1rem;
 		transition: transform .3s ease-out;
 
-		> img {
+		> a > img {
 			// height: 32px;
             // width: auto;
             height: 32px;
@@ -1302,6 +1302,14 @@ footer {
 	}
 }
 
+.products-container {
+    &__slider {
+        div.slick-slide:hover .btn-product-popup{
+            display: inline-block;
+        }
+    }
+}
+
 @media (min-width: 980px) {
     .breadcrumbs {
         display: block;
@@ -1348,7 +1356,7 @@ footer {
 			align-items: center;
 			transform: none !important;
 
-			> img {
+			> a > img {
 				height: 64px;
 			}
         }
