@@ -31511,6 +31511,14 @@ button.btn.--large {
   border-left: none;
   padding-left: 0;
 }
+@media (min-width: 757px) {
+  .big_label small,
+  .headline small,
+  .big_label__after,
+  .headline__after {
+    color: #DCA8A4;
+  }
+}
 @media (min-width: 979px) {
   #logo {
     height: 106px;
@@ -32014,22 +32022,61 @@ header .breadcrumbs {
     margin-top: 46px;
   }
 }
-#products_associated_zone3 .product {
-  border: none;
+.product {
+  border: none !important;
 }
 @media (min-width: 979px) {
-  #products_associated_zone3 .product__icon {
+  .product__icon {
     height: 26.5rem;
   }
 }
-#products_associated_zone3 .product__name {
+.product__name {
   font-weight: normal;
 }
-#products_associated_zone3 .product__prices {
+.product__prices {
   text-align: left;
 }
 #layout {
   margin-bottom: 80px;
+}
+@media (min-width: 979px) {
+  .ui-autocomplete .menuitem_product.ui-state-hover,
+  .ui-autocomplete .menuitem_product:hover {
+    color: #DCA8A4;
+    border: 2px solid !important;
+  }
+}
+.f-group .f-control:focus,
+.f-group .f-control.focused {
+  border-color: #DCA8A4;
+}
+.f-group .f-control:focus + .f-label,
+.f-group .f-control.focused + .f-label {
+  color: #DCA8A4;
+}
+.f-group.--checkbox .f-control {
+  display: none;
+}
+.f-group.--checkbox .f-control:checked + .f-label:before {
+  background: #DCA8A4;
+  border: 1px solid #DCA8A4;
+  color: #ffffff;
+}
+.form-group .form-control:focus + .control-label {
+  color: #DCA8A4;
+}
+.form-control:focus {
+  border-color: #DCA8A4;
+}
+#menu_categories2 .menu_categories_label:hover {
+  color: #DCA8A4;
+}
+#search .product .trait__value:hover {
+  color: #DCA8A4;
+}
+.bundled_options_select .form-control.dropdown-toggle::after,
+.bundled_options_select div.fancy-select div.trigger:after {
+  color: #DCA8A4;
 }
 @media (min-width: 979px) {
   .article {
@@ -32069,6 +32116,10 @@ footer {
 }
 #footer_links .footer_links_sub a {
   color: #ffffff;
+  font-weight: normal;
+}
+#footer_links .footer_links_sub a:hover {
+  color: #DCA8A4;
 }
 @media (min-width: 979px) {
   #footer_links .footer_links_sub > li {
@@ -32078,9 +32129,6 @@ footer {
 }
 #footer_links .footer_links_sub > li.menu_orders_item i {
   display: none;
-}
-#footer_links .footer_links_sub > li.menu_orders_item a {
-  font-weight: normal;
 }
 #footer_links #menu_orders,
 #footer_links #menu_account {
