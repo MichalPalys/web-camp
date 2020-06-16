@@ -40,7 +40,7 @@
     display: none;
     position: fixed;
     z-index: 10;
-    padding-top: 35px;
+    padding-top: 20px;
     left: 0;
     top: 0;
     width: 100%;
@@ -52,35 +52,40 @@
 .product-add-cart-modal-content {
     width: 90%;
     margin: 0 auto 20px auto;
-    height: 140%;
-    @media (min-width: 980px) {
-        height: 90%;
-    }
+    height: 155%;
     background-color: white;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+
+    @media (min-width: 980px) {
+        height: 96%;
+    }
 }
 
 
-// .product-add-cart-modal-content, .product-add-cart-modal-caption {  
-//     animation-name: zoom;
-//     animation-duration: 0.6s;
-// }
+.product-add-cart-modal-content, .product-add-cart-modal-caption {  
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
   
-// @keyframes zoom {
-//     from {transform: scale(0.1)} 
-//     to {transform: scale(1)}
-// }
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
 
 .product-add-cart-modal-close {
     position: absolute;
-    top: 25px;
-    right: 90px;
+    top: 15px;
+    right: 40px;
     color: #bbb;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+
+    @media (min-width: 980px) {
+        right: 90px;
+    }
 }
 
 .product-add-cart-modal-close:hover,

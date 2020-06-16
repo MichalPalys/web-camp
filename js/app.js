@@ -4,7 +4,7 @@
     $('.btn-product-popup').on('click', function(){
       var productID = $(this).closest("[data-product-id]").data("product-id");
       
-      $.getJSON("products/product_" + productID + ".json", function(response, status, xhr){
+      $.getJSON("http://serwer2090327.home.pl/products/product_" + productID + ".json", function(response, status, xhr){
         if (status == "success"){
           console.log(response);
           $('#product-popup-modal').css("display", "block");
@@ -36,7 +36,7 @@
               prevArrow: '<button type="button" class="horizontal-big-arrow-slick-prev">Previous</button>',
               nextArrow: '<button type="button" class="horizontal-big-arrow-slick-next">Next</button>',
             });
-          }, 300);
+          }, 900);
 
         } else {
           console.log("An error occured: " + xhr.status + " " + xhr.statusText);
