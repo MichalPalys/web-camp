@@ -5,5 +5,12 @@
     "productPrice": "150,00 zł",
     "productPriceBefore": "180,00 zł",
     "productDiscountPercent": "16,66 %",
-    "productDiscountAmount": "30,00 zł"
+    "productDiscountAmount": "30,00 zł",
+    "pictures": {
+        "1": "img/shoe/botki-karino-1-340x340.png",
+        "2": "img/shoe/botki-karino-2-340x340.png",
+        "3": "img/shoe/botki-karino-3-340x340.png",
+        "4": "img/shoe/botki-karino-1-340x340.png",
+        "5": "img/shoe/botki-karino-2-340x340.png"
+    }
 }

@@ -1,12 +1,51 @@
 
   $(document).ready(function(){
-
     $('.btn-product-popup').on('click', function(){
       var productID = $(this).closest("[data-product-id]").data("product-id");
-      
-      $.getJSON("http://serwer2090327.home.pl/products/product_" + productID + ".json", function(response, status, xhr){
-        if (status == "success"){
-          console.log(response);
+
+      if($('.single-product-container__slider_popup').hasClass('slick-initialized')){
+        $('.single-product-container__slider_popup').slick('slickRemove', null, null, true);
+        $('.single-product-container__slider_popup').slick('unslick');
+      }
+
+      $.ajax({
+        cache: false,
+        url: "http://serwer2090327.home.pl/products/product_" + productID + ".json",
+        dataType: "json",
+        success: function(response){
+          $.each(response.pictures, function(i, field){
+            console.log(field);
+            var htmlSlideStructure = "<div> \
+            <a href='' title=''> \
+                <img src='" + field + "' alt=''> \
+            </a> \
+            <div> \
+                <div> \
+                    <div class='slider-badge'> \
+                        promocja \
+                    </div> \
+                    <div class='slider-rating-wrapper'> \
+                        <i class='icon-star'></i> \
+                        <i class='icon-star'></i> \
+                        <i class='icon-star'></i> \
+                        <i class='icon-star'></i> \
+                        <i class='icon-star' style='color: #CFCFCF;'></i> \
+                        <span>4.5</span> \
+                    </div> \
+                </div> \
+                <div> \
+                    <div class='slider-shoe-name'></div> \
+                    <span class='slider-shoe-code'></span><span id='toggle-mobile' class='slider-shoe-code-desc'></span> \
+                </div> \
+            </div> \
+            </div>";
+
+            $('.single-product-container__slider_popup').append(htmlSlideStructure);
+
+          });
+          
+          // var picturesAmount = Object.keys(response.pictures).length;
+
           $('#product-popup-modal').css("display", "block");
 
           $('#product-popup-modal').find('.slider-shoe-name').html(response.productName);
@@ -31,17 +70,18 @@
             $('.single-product-container__slider_popup').slick({
               slidesToShow: 1,
               slidesToScroll: 1,
-              infinite: true,
+              infinite: false,
               arrows: true,
               prevArrow: '<button type="button" class="horizontal-big-arrow-slick-prev">Previous</button>',
               nextArrow: '<button type="button" class="horizontal-big-arrow-slick-next">Next</button>',
             });
           }, 900);
-
-        } else {
-          console.log("An error occured: " + xhr.status + " " + xhr.statusText);
+        },
+        error: function(xhr){
+          alert("An error occured: " + xhr.status + " " + xhr.statusText);
         }
       });
+      
     });
 
 
