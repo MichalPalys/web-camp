@@ -1,6 +1,7 @@
 
   $(document).ready(function(){
     $('.btn-product-popup').on('click', function(){
+
       var productID = $(this).closest("[data-product-id]").data("product-id");
 
       if($('.single-product-container__slider_popup').hasClass('slick-initialized')){
@@ -65,6 +66,20 @@
             $('#product-popup-modal').find('.discount-amount').html(response.productDiscountAmount);
           }
 
+          var availability, light;
+          $('.shoe-size-wrapper').children().remove();
+          $('.shoe-size-wrapper').append("<select class='select-active normal' name='' id='' style='font-family: fontello'></select>");
+          $('.shoe-size-wrapper > select').append("<option value='0'>wybierz rozmiar</option>");
+          $.each(response.sizes, function(i, field){
+            if(field){
+              availability = "dostępne";
+              light = "&#xe80f";
+            } else {
+              availability = "niedostępne";
+              light = "&#xe80e";
+            }
+            $('.shoe-size-wrapper > select').append("<option value='" + i + "'>" + light + " Rozmiar: " + i + " | " + availability + "</option>")
+          });
 
           setTimeout(function(){
             $('.single-product-container__slider_popup').slick({
@@ -81,7 +96,7 @@
           alert("An error occured: " + xhr.status + " " + xhr.statusText);
         }
       });
-      
+
     });
 
 

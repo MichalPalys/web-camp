@@ -10,5 +10,14 @@
         "1": "img/shoe/botki-karino-1-340x340.png",
         "2": "img/shoe/botki-karino-2-340x340.png",
         "3": "img/shoe/botki-karino-3-340x340.png"
+    },
+    "sizes": {
+        "36": true,
+        "37": false,
+        "38": true,
+        "39": true,
+        "40": true,
+        "41": true,
+        "42": false
     }
 }
