@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
-    <meta lang="en">
     <meta charset="UTF-8">
     <!-- <meta http-equiv="Access-Control-Allow-Origin" content="*"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +28,8 @@
 		</div>
 		<div id="menu-box">
 			<div>
-				<a href=""><img src="img/Armodo_pl_LOGO.png" alt=""></a>
-				<form id="search-box" method="post" action="">
+				<a href="/"><img src="img/Armodo_pl_LOGO.png" alt=""></a>
+				<form id="search-box" method="post" action="action.php">
 					<input type="text" name="search" value="" placeholder="Wpisz czego szukasz">
 					<button type="submit"><img src="img/search-icon.svg" alt=""></button>
 				</form>
@@ -39,7 +38,7 @@
 					<a class="link-icon" href=""><img src="img/phone-empty.svg" alt=""></a>
 					<a class="link-icon" href=""><img src="img/people.svg" alt=""></a>
 					<a class="link-icon" href=""><img src="img/heart-icon.svg" alt=""></a>
-					<a id="cart-icon" htef="">
+					<a id="cart-icon" href="">
 						<div>
 							<img src="img/cart.svg" alt="">
 							<span>12</span>
@@ -125,7 +124,7 @@
 								</li>
 							</ul>
 							<ul id="right-submenu">
-								<li id="menu-banner">
+								<li class="menu-banner">
 									<a href="" title=""><img src="img/main-slide-1.jpg" alt="baner reklamowy"></a>
 								</li>
 								<li>
@@ -147,7 +146,7 @@
 								<li>
 									<a class="mobile-next" href="javascript:void(0)" title="">botki i kozaki<span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="" title="">botki</a></li>
+										<li><a href="botki_card.html" title="">botki</a></li>
 										<li><a href="" title="">glany</a></li>
 										<li><a href="" title="">kowbojki</a></li>
 										<li><a href="" title="">kozaki</a></li>
@@ -199,7 +198,7 @@
 								</li>
 							</ul>
 							<ul id="right-submenu">
-								<li id="menu-banner">
+								<li class="menu-banner">
 									<a href="" title=""><img src="img/main-slide-1.jpg" alt="baner reklamowy"></a>
 								</li>
 								<li>
@@ -599,6 +598,11 @@
     <div id="loading-modal" class="info-modal">
         <span class="info-modal-close">&times;</span>
         <div class="info-modal-content">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div id="loading-spinner">
+        <div>
             <div class="loader"></div>
         </div>
     </div>

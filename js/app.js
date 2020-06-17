@@ -1,6 +1,7 @@
 
   $(document).ready(function(){
     $('.btn-product-popup').on('click', function(){
+      $('#loading-spinner').css("display", "block");
 
       var productID = $(this).closest("[data-product-id]").data("product-id");
 
@@ -15,7 +16,7 @@
         dataType: "json",
         success: function(response){
           $.each(response.pictures, function(i, field){
-            console.log(field);
+
             var htmlSlideStructure = "<div> \
             <a href='' title=''> \
                 <img src='" + field + "' alt=''> \
@@ -55,6 +56,7 @@
           $('#product-popup-modal').find('.current-price').html(response.productPrice);
 
           var priceBeforeDiscount = response.productPriceBefore;
+
           if (priceBeforeDiscount.length == 0) {
             $('#product-popup-modal').find('.discount-text').css("display", "none");
             $('#product-popup-modal').find('.price-before-discount').css("display", "none");
@@ -67,6 +69,7 @@
           }
 
           var availability, light;
+
           $('.shoe-size-wrapper').children().remove();
           $('.shoe-size-wrapper').append("<select class='select-active normal' name='' id='' style='font-family: fontello'></select>");
           $('.shoe-size-wrapper > select').append("<option value='0'>wybierz rozmiar</option>");
@@ -90,7 +93,9 @@
               prevArrow: '<button type="button" class="horizontal-big-arrow-slick-prev">Previous</button>',
               nextArrow: '<button type="button" class="horizontal-big-arrow-slick-next">Next</button>',
             });
-          }, 900);
+
+            $('#loading-spinner').css("display", "none");
+          }, 1000);
         },
         error: function(xhr){
           alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -107,17 +112,17 @@
 
       if(bootSize != 0) {
         var $loadingModal = $('#loading-modal');
+
         $loadingModal.css("display", "block");
+        
         setTimeout(function(){
           $loadingModal.css("display", "none");
-          console.log(bootSize);
         }, 3000);
         
       } else {
         var $validationModal = $('#validation-modal');
 
         $validationModal.css("display", "block")
-        // console.log($validationModal.css("display", "block"));
       }
     });
 

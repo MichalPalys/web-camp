@@ -1,4 +1,5 @@
 @import 'slick-custom-arrow';
+@import 'colors';
 @import 'common-classes';
 
 * {
@@ -73,7 +74,6 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,0.9);
 }
 
@@ -1061,7 +1061,7 @@ footer {
 				}
 			}
 		}
-		li:not(#menu-banner) > a {
+		li:not(.menu-banner) > a {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -1146,7 +1146,7 @@ footer {
 		}
 	}
 }
-#menu-banner {
+.menu-banner {
 	width: 100%;
 
 	a {
@@ -1457,7 +1457,7 @@ footer {
 				display: block !important;
 			}
 		}
-		li:not(#menu-banner) {
+		li:not(.menu-banner) {
 			+ li {
 				margin-left: 4rem;
 			}
@@ -1468,7 +1468,7 @@ footer {
 			}
 		}
 	}
-	#menu-banner {
+	.menu-banner {
 		margin-bottom: 1rem;
 	}
 	#langs {
