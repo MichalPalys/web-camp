@@ -1,6 +1,5 @@
-@import 'slick-custom-arrow';
 @import 'colors';
-@import 'common-classes';
+@import 'slick-custom-arrow';
 
 * {
     margin: 0;
@@ -165,7 +164,7 @@ body {
 
 .normal {
     height: 51px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .select-active {
@@ -655,13 +654,29 @@ body {
     &__season-discount {
         display: flex;
         justify-content: center;
-        align-items: center;
         background-color: #BB2000;
-        color: white;
-        text-align: center;
         text-transform: uppercase;
         font-size: 15px;
+        letter-spacing: 1px;
         height: 47px;
+
+        a {
+            display: flex;
+            align-items: center;
+            color: $link_color_alternativ;
+
+            &:hover {
+                color: $link_color_hover_alternativ;
+            }
+
+            &::after {
+                font-family: 'fontello';
+                content: '\F006';
+                margin-left: 5px;
+                font-size: 10px;
+            }
+        }
+        
     }
 
     &__main-info-banner {
@@ -707,20 +722,20 @@ body {
     // display: none !important;      // tylko dla celów zadania z dnia 6
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(30vh, auto);
+    grid-auto-rows: minmax(40vh, auto);
     grid-gap: 10px;
     // margin: 0 5px;
 
     .single-banner-wrapper {
         display: grid;
         grid-template-columns: 1fr;
-        border: 1px solid #504f4f;
-        background-color: #a7a5a4;
+        background-color: $gray_lighter_color;
         align-items: center;
 
         a {
-            text-decoration: none;
-            color: black;
+            font-size: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             text-align: center;
         }
     }
@@ -868,9 +883,9 @@ body {
             width: 100%;
         }
 
-        .all-opinions-link {
+        // .all-opinions-link {
 
-        }
+        // }
     }
 }
 
@@ -914,7 +929,6 @@ footer {
         grid-template-columns: 1fr;
         grid-gap: 10px;
         background-color: #231F20;
-        color: white;
         align-items: center;
         text-align: center;
     }
@@ -935,7 +949,6 @@ footer {
 
 			> a {
 				color: #fff;
-				text-decoration: none;
 			}
 
             ul > li {
@@ -947,9 +960,11 @@ footer {
             }
 
             ul > li > a {
-                text-decoration: none;
-                color: white;
                 padding: 5px;
+
+                &:hover {
+                    color: $link_color_hover;
+                }
             }
 
             ul {
@@ -1032,7 +1047,8 @@ footer {
 
 		ul {
 			list-style: none;
-		}
+        }
+        
 		.main-nav-box {
 			padding: 0;
 			display: flex;
@@ -1060,12 +1076,12 @@ footer {
 					top: 0; height: 100%;
 				}
 			}
-		}
+        }
+        
 		li:not(.menu-banner) > a {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			color: #000;
 			text-decoration: none;
 			text-transform: capitalize;
 			padding: 1rem;
@@ -1084,7 +1100,8 @@ footer {
 					display: block;
 				}
 			}
-		}
+        }
+        
 		li.only-mobile a {
 			justify-content: flex-start !important;
 			background-color: #cbcbcb;
@@ -1134,7 +1151,7 @@ footer {
 		}
 	}
 }
-#left-submenu {
+.left-submenu {
 	display: flex;
 	flex-wrap: wrap;
 
@@ -1377,14 +1394,14 @@ footer {
 				> li {
 					width: auto !important;
 					+ li {
-						margin-left: 2rem;
+						margin-left: 1rem;
 					}
 					> a {
 						display: block;
 						font-weight: bold;
 						color: #000;
-						text-transform: uppercase;
-						text-decoration: none;
+                        text-transform: uppercase !important;
+                        letter-spacing: 2px;
 						padding: .75rem 1rem !important;
 						font-size: 1rem !important;
 					}
@@ -1427,7 +1444,7 @@ footer {
 			}
 		}
 	}
-	#left-submenu {
+	.left-submenu {
 		display: block !important;
 		 > li {
 			width: 100%;
@@ -1447,7 +1464,7 @@ footer {
 			}
 		 }
 	}
-	#right-submenu {
+	.right-submenu {
 		text-align: center;
 		li {
 			display: inline-block;
@@ -1478,8 +1495,8 @@ footer {
     .top-section-container {
 		margin-top: 0;
 
-        &__season-discount {
-        }
+        // &__season-discount {
+        // }
 
         &__main-info-banner {
             display: flex;
@@ -1491,13 +1508,41 @@ footer {
             text-transform: uppercase;
             font-size: 15px;
             height: 47px;
-			span + span {
+			div + div {
                 margin-left: 2.5rem;
 
-                img {
-                    margin-right: 10px;
-                }
+                // img {
+                //     margin-right: 10px;
+                // }
 			}
+        }
+    }
+
+    .benefits {
+        font-size: 1rem;
+
+        &__block {
+            &::before{
+                font-family: 'fontello';
+                margin-right: 5px;
+            }
+
+            &.--delivery::before {
+                content: '\E80B';
+            }
+
+            &.--return::before {
+                content: '\E925';
+            }
+
+            &.--sale::before {
+                content: '\E926';
+            }
+        }
+
+        &__item {
+            display: inline-block;
+            letter-spacing: 1px;
         }
     }
 
@@ -1727,7 +1772,7 @@ footer {
                 .block-section-item {
                     display: grid;
                     grid-template-columns: 1fr;
-                    background-color: white;
+                    background-color: $gray_lighter_color;
                     align-items: center;
 
                     a {
@@ -1735,7 +1780,6 @@ footer {
                         letter-spacing: 2px;
                         text-decoration: none;
                         text-transform: uppercase;
-                        color: black;
                         text-align: center;
                     }
                 }
@@ -1773,13 +1817,11 @@ footer {
         }
         .nav-container {
             background-color: #231F20;
-            color: white;
             text-align: center;
 
             .menu-wrapper {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                color: white;
                 align-items: start;
                 text-align: center;
 
@@ -1810,3 +1852,5 @@ footer {
     }
 
 }
+
+@import 'common-classes';
