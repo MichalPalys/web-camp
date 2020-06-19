@@ -37,7 +37,7 @@
                 </div> \
                 <div> \
                     <div class='slider-shoe-name'></div> \
-                    <span class='slider-shoe-code'></span><span id='toggle-mobile' class='slider-shoe-code-desc'></span> \
+                    <span class='slider-shoe-code'></span><span class='toggle-mobile' class='slider-shoe-code-desc'></span> \
                 </div> \
             </div> \
             </div>";

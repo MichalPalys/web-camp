@@ -353,7 +353,7 @@ body {
   color: #000000;
 }
 
-#toggle-mobile {
+.toggle-mobile {
   display: none;
 }
 
@@ -1837,7 +1837,7 @@ footer .icons-wrapper .icons-wrapper__element2 {
   .breadcrumbs {
     display: block;
   }
-  #toggle-mobile {
+  .toggle-mobile {
     display: inline;
   }
   #burger, #top-links > a.link-icon:nth-of-type(1), .only-mobile {
