@@ -32186,6 +32186,13 @@ footer {
   content: "\F106";
   margin: 0;
 }
+.progress__item.--active .progress__icon {
+  background: #DCA8A4;
+  border-color: #DCA8A4;
+}
+.progress__icon {
+  color: #DCA8A4;
+}
 
 /* open-sans-300 - latin-ext */
 @font-face {
