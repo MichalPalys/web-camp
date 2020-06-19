@@ -24,7 +24,6 @@ a {
 .custom-select {
     max-width: 80%;
     position: relative;
-    font-family: 'fontello';
     color: $text_color;
 
     select {
@@ -63,8 +62,6 @@ a {
         display: flex;
         align-items: center;
         padding: 8px 0;
-        // border: 1px solid $gray_darker_color;
-        // border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
         cursor: pointer;
         user-select: none;
     }
@@ -93,13 +90,30 @@ a {
     }
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .boot-size-option {
-    .green {
-        color: green;
+    i {
+        margin-right: 5px;
     }
-    .icon-circle {
-        
+
+    b {
+        margin-left: 2px;
     }
+
+    span.bold {
+        margin: 0 5px;
+    }
+}
+
+.green-light {
+    color: $green_light;
+}
+
+.red-light {
+    color: $red_light;
 }
 
 .white {
@@ -170,9 +184,8 @@ a {
     width: 80%;
     cursor: pointer;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 0; top: auto;
+    transform: translateX(-50%);
 }
 
 // product add cart modal
@@ -324,9 +337,9 @@ a {
                 padding: 15px 0 15px 20px;
                 text-align: left;
 
-                .shoe-size-wrapper {
-                    width: 80%;
-                }
+                // .shoe-size-wrapper {
+                //     width: 80%;
+                // }
             }
 
             &__available-colors-wrapper {

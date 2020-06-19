@@ -41,7 +41,11 @@
 
 // horizontal big custom slick arrow
 .horizontal-big-arrow-slick-prev {
-    left: 10%;
+    left: 0;
+
+    @media (min-width: 980px) {
+        left: 10%;
+    }
 
     &::before {
         content: '\f007';
@@ -49,7 +53,11 @@
 }
 
 .horizontal-big-arrow-slick-next {
-    right: 10%;
+    right: 0;
+
+    @media (min-width: 980px) {
+        right: 10%;
+    }
 
     &::before {
         content: '\f006';
@@ -60,7 +68,7 @@
     font-size: 0;
     line-height: 0;
     position: absolute;
-    top: 50%;
+    top: 40%;
     display: block;
     width: 26px;
     height: 26px;
@@ -70,7 +78,11 @@
     border: none;
     outline: none;
     background: transparent;
-    z-index: 3;
+    z-index: 1;
+
+    @media (min-width: 980px) {
+        top: 50%;
+    }
 
     &::before {
         font-family: 'fontello';

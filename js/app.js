@@ -68,21 +68,14 @@
             $('#product-popup-modal').find('.discount-amount').html(response.productDiscountAmount);
           }
 
-          var availability, light;
-
           $('.shoe-size-wrapper').children().remove();
-          $('.shoe-size-wrapper').append("<select class='select-active normal' name='' id='' style='font-family: fontello'></select>");
-          $('.shoe-size-wrapper > select').append("<option value='0'>wybierz rozmiar</option>");
+          $('.shoe-size-wrapper').append("<div class='custom-select'><select class='select-active normal'></select></div>");
+          $('.shoe-size-wrapper select').append("<option value='0'>wybierz rozmiar</option>");
           $.each(response.sizes, function(i, field){
-            if(field){
-              availability = "dostępne";
-              light = "&#xe80f";
-            } else {
-              availability = "niedostępne";
-              light = "&#xe80e";
-            }
-            $('.shoe-size-wrapper > select').append("<option value='" + i + "'>" + light + " Rozmiar: " + i + " | " + availability + "</option>")
+            $('.shoe-size-wrapper select').append("<option value='" + i + "'>" + field + "</option>")
           });
+
+          initBootSizeSelect();
 
           setTimeout(function(){
             $('.single-product-container__slider_popup').slick({
@@ -161,11 +154,11 @@
         {
           breakpoint: 960,
           settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          // mobileFirst: true,
-          arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            // mobileFirst: true,
+            arrows: true,
           }
         }
     ]
@@ -291,82 +284,86 @@
     }
       });
 
-      //custom-select
-      var customSelectArray, i, j, l, oldSelectOptionsAmount, oldSelectElement, a, b, c;
-      /*look for any elements with the class "custom-select":*/
-      customSelectArray = document.getElementsByClassName("custom-select");
-      l = customSelectArray.length;
-      for (i = 0; i < l; i++) {
-        oldSelectElement = customSelectArray[i].getElementsByTagName("select")[0];
-        oldSelectOptionsAmount = oldSelectElement.length;
-        /*for each element, create a new DIV that will act as the selected item:*/
-        a = document.createElement("DIV");
-        a.setAttribute("class", "select-selected select-active normal");
-        a.innerHTML = oldSelectElement.options[oldSelectElement.selectedIndex].innerHTML;
-        customSelectArray[i].appendChild(a);
-        /*for each element, create a new DIV that will contain the option list:*/
-        b = document.createElement("DIV");
-        b.setAttribute("class", "select-items select-hide");
-        for (j = 1; j < oldSelectOptionsAmount; j++) {
-          /*for each option in the original select element,
-          create a new DIV that will act as an option item:*/
-          c = document.createElement("DIV");
-          // c.innerHTML = oldSelectElement.options[j].innerHTML;
-          optionInnerHTML = oldSelectElement.options[j].innerHTML;
-          size = oldSelectElement.options[j].value;
-          if(optionInnerHTML == "true"){
-            available = "Dostępny";
-            lightColorClass = "green";
-          } else {
-            available = "Niedostępny";
-            lightColorClass = "";
-          }
+      //custom-select boots size
+      function initBootSizeSelect() {
+        var customSelectArray, i, j, l, oldSelectOptionsAmount, oldSelectElement, a, b, c;
+        //look for any elements with the class "custom-select":
+        customSelectArray = document.getElementsByClassName("custom-select");
+        l = customSelectArray.length;
+        for (i = 0; i < l; i++) {
+          oldSelectElement = customSelectArray[i].getElementsByTagName("select")[0];
+          oldSelectOptionsAmount = oldSelectElement.length;
+          //for each element, create a new DIV that will act as the selected item:
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected select-active normal");
+          a.innerHTML = oldSelectElement.options[oldSelectElement.selectedIndex].innerHTML;
+          customSelectArray[i].appendChild(a);
+          //for each element, create a new DIV that will contain the option list:
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 1; j < oldSelectOptionsAmount; j++) {
+            /*for each option in the original select element,
+            create a new DIV that will act as an option item:*/
+            c = document.createElement("DIV");
+            optionInnerHTML = oldSelectElement.options[j].innerHTML;
+            size = oldSelectElement.options[j].value;
+            if(optionInnerHTML == "true"){
+              available = "Dostępny";
+              lightColorClass = "green-light";
+            } else {
+              available = "Niedostępny";
+              lightColorClass = "red-light";
+            }
 
-          c.innerHTML = "\
-          <div class='boot-size-option'>\
-                        <i class='icon-circle " + lightColorClass + "'></i>Rozmiar <b class='boot-size'>" + size + "</b>\
-                        <span> | </span>\
-                        <span class='available'>Dostępny</span>\
-                    </div>\
-          ";
+            c.innerHTML = "\
+            <div class='boot-size-option' data-boot-size='" + size + "'>\
+                          <i class='icon-circle " + lightColorClass + "'></i>Rozmiar: <b class='boot-size'>" + size + "</b>\
+                          <span class='bold'> | </span>\
+                          <span class='available'>" + available + "</span>\
+                      </div>\
+            ";
 
-          c.addEventListener("click", function(e) {
-              /*when an item is clicked, update the original select box,
-              and the selected item:*/
-              var y, i, k, s, h, sl, yl;
-              s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-              sl = s.length;
-              h = this.parentNode.previousSibling;
-              for (i = 0; i < sl; i++) {
-                if (s.options[i].innerHTML == this.innerHTML) {
-                  s.selectedIndex = i;
-                  h.innerHTML = this.innerHTML;
-                  y = this.parentNode.getElementsByClassName("same-as-selected");
-                  yl = y.length;
-                  for (k = 0; k < yl; k++) {
-                    y[k].removeAttribute("class");
+            c.addEventListener("click", function(e) {
+                /*when an item is clicked, update the original select box,
+                and the selected item:*/
+                var y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < sl; i++) {
+                  console.log("this klikniete: " + this.firstElementChild.getAttribute("data-boot-size"));
+                  console.log(s.options[i].value)
+                  if (s.options[i].value == this.firstElementChild.getAttribute("data-boot-size")) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                      y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
                   }
-                  this.setAttribute("class", "same-as-selected");
-                  break;
                 }
-              }
-              h.click();
-          });
-          b.appendChild(c);
+                h.click();
+            });
+            b.appendChild(c);
+          }
+          customSelectArray[i].appendChild(b);
+          a.addEventListener("click", function(e) {
+              /*when the select box is clicked, close any other select boxes,
+              and open/close the current select box:*/
+              e.stopPropagation();
+              closeAllSelect(this);
+              this.nextSibling.classList.toggle("select-hide");
+            });
         }
-        customSelectArray[i].appendChild(b);
-        a.addEventListener("click", function(e) {
-            /*when the select box is clicked, close any other select boxes,
-            and open/close the current select box:*/
-            e.stopPropagation();
-            closeAllSelect(this);
-            this.nextSibling.classList.toggle("select-hide");
-            this.classList.toggle("select-arrow-active");
-          });
       }
+      
       function closeAllSelect(elmnt) {
         /*a function that will close all select boxes in the document,
         except the current select box:*/
+        console.log('DZIAŁĄ');
         var x, y, i, xl, yl, arrNo = [];
         x = document.getElementsByClassName("select-items");
         y = document.getElementsByClassName("select-selected");
@@ -375,8 +372,6 @@
         for (i = 0; i < yl; i++) {
           if (elmnt == y[i]) {
             arrNo.push(i)
-          } else {
-            y[i].classList.remove("select-arrow-active");
           }
         }
         for (i = 0; i < xl; i++) {
@@ -388,6 +383,9 @@
       /*if the user clicks anywhere outside the select box,
       then close all select boxes:*/
       document.addEventListener("click", closeAllSelect);
+      //custom-select boots size - END
+
+      initBootSizeSelect();
 });
 
 $(window).resize(function(){
